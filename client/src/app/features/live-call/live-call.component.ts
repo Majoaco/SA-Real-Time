@@ -7,7 +7,6 @@ import {
   TranscriptUpdate,
   Suggestion,
   TemperatureUpdate,
-  ChecklistUpdate
 } from '../../core/models/call-session.model';
 
 @Component({
@@ -31,13 +30,12 @@ export class LiveCallComponent implements OnInit, OnDestroy {
   completedSteps: string[] = [];
   currentPhase: string | null = null;
 
-  // BBVA Protocol checklist
   readonly protocolSteps = [
     { id: 'apertura', label: 'Apertura' },
     { id: 'discurso', label: 'Discurso' },
     { id: 'cordialidad', label: 'Cordialidad' },
     { id: 'cierres_parciales', label: 'Cierres Parciales' },
-    { id: 'conduccion', label: 'Conducción' },
+    { id: 'conduccion', label: 'Conduccion' },
     { id: 'procedimiento_beneficios', label: 'Procedimiento / Beneficios' },
     { id: 'aceptacion_objeciones', label: 'Objeciones' },
     { id: 'solicitud_datos', label: 'Solicitud Datos' },

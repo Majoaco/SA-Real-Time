@@ -14,7 +14,6 @@ import {
 export class SignalRService {
   private hubConnection!: signalR.HubConnection;
 
-  // Observables for real-time events
   readonly callStarted$ = new Subject<StartCallResponse>();
   readonly transcriptUpdate$ = new Subject<TranscriptUpdate>();
   readonly newSuggestion$ = new Subject<Suggestion>();
