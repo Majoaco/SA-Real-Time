@@ -1,0 +1,6 @@
+@SpeechAnalytics.WebAPI_HostAddress = http://localhost:5145
+
+GET {{SpeechAnalytics.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

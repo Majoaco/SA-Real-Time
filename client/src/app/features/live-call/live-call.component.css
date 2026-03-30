@@ -1,0 +1,213 @@
+.live-call-container {
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.call-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #1a1a2e;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.call-header h1 { font-size: 1.2rem; margin: 0; }
+
+.start-call-form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.start-call-form input,
+.start-call-form select {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background: #16213e;
+  color: white;
+}
+
+.start-call-form button {
+  padding: 8px 20px;
+  background: #0f3460;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.start-call-form button:hover { background: #1a5276; }
+.start-call-form button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.status-badge.active {
+  background: #dc3545;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.btn-end {
+  padding: 8px 16px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 16px;
+  height: calc(100vh - 120px);
+}
+
+/* Transcript Panel */
+.transcript-panel {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.transcript-panel h2 { margin: 0 0 12px; font-size: 1rem; color: #333; }
+
+.transcript-scroll {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.transcript-segment {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.transcript-segment.employee {
+  background: #e3f2fd;
+  border-left: 3px solid #1976d2;
+}
+
+.transcript-segment.client {
+  background: #f3e5f5;
+  border-left: 3px solid #7b1fa2;
+}
+
+.speaker { font-weight: 600; margin-right: 4px; }
+
+/* Assistant Panel */
+.assistant-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.assistant-panel section {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.assistant-panel h2 { margin: 0 0 8px; font-size: 0.95rem; color: #333; }
+
+.empty-state { color: #999; font-size: 0.85rem; font-style: italic; }
+
+/* Suggestions */
+.suggestion-card {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background: #e8f5e9;
+  border-radius: 6px;
+  border-left: 3px solid #4caf50;
+  font-size: 0.85rem;
+}
+
+.suggestion-card.high { border-left-color: #ff9800; background: #fff3e0; }
+.suggestion-card.critical { border-left-color: #f44336; background: #ffebee; }
+.suggestion-card p { margin: 0 0 4px; }
+.category { font-size: 0.75rem; color: #888; }
+
+/* Temperature */
+.temperature-grid { display: flex; flex-direction: column; gap: 8px; }
+
+.temp-item {
+  display: grid;
+  grid-template-columns: 80px 1fr 100px;
+  align-items: center;
+  gap: 8px;
+}
+
+.temp-label { font-size: 0.8rem; font-weight: 600; }
+.temp-value { font-size: 0.8rem; color: #666; }
+
+.temp-bar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.temp-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.attention-alert {
+  padding: 6px 12px;
+  background: #ffebee;
+  color: #c62828;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Checklist */
+.current-phase {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  background: #e3f2fd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist li {
+  padding: 6px 8px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+}
+
+.checklist li.completed { color: #2e7d32; }
+.checklist li.current { background: #e8f5e9; font-weight: 600; }
+
+.check-icon { font-size: 1rem; width: 20px; text-align: center; }

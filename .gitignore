@@ -1,0 +1,27 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.dll
+*.pdb
+.vs/
+
+# Node / Angular
+client/node_modules/
+client/dist/
+client/.angular/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Environment
+appsettings.Development.json
+.env
+
+# OS
+.DS_Store
+Thumbs.db

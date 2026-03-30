@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{96CDCC82-6C7C-4C34-BCBF-DAB00516E811}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechAnalytics.Domain", "src\SpeechAnalytics.Domain\SpeechAnalytics.Domain.csproj", "{FED2510C-C237-46A1-ADF9-CF815CC21C43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechAnalytics.Application", "src\SpeechAnalytics.Application\SpeechAnalytics.Application.csproj", "{71843099-CA58-4043-BEE2-1B77BC1CA7CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechAnalytics.Infrastructure", "src\SpeechAnalytics.Infrastructure\SpeechAnalytics.Infrastructure.csproj", "{B56B9B15-F6ED-4459-9050-4FFE2F85C17C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechAnalytics.WebAPI", "src\SpeechAnalytics.WebAPI\SpeechAnalytics.WebAPI.csproj", "{4A375720-F8D6-4C2B-ABF1-5F75B3A88C50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{95A59137-4F3E-48AF-86C2-5DB5BD21F6FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechAnalytics.Domain.Tests", "tests\SpeechAnalytics.Domain.Tests\SpeechAnalytics.Domain.Tests.csproj", "{84EEDA1B-B0E1-491F-BDE1-2CEF31752D72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechAnalytics.Application.Tests", "tests\SpeechAnalytics.Application.Tests\SpeechAnalytics.Application.Tests.csproj", "{AA98CA17-267E-48FE-879F-0A3483A26B13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FED2510C-C237-46A1-ADF9-CF815CC21C43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED2510C-C237-46A1-ADF9-CF815CC21C43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED2510C-C237-46A1-ADF9-CF815CC21C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED2510C-C237-46A1-ADF9-CF815CC21C43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71843099-CA58-4043-BEE2-1B77BC1CA7CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71843099-CA58-4043-BEE2-1B77BC1CA7CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71843099-CA58-4043-BEE2-1B77BC1CA7CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71843099-CA58-4043-BEE2-1B77BC1CA7CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56B9B15-F6ED-4459-9050-4FFE2F85C17C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56B9B15-F6ED-4459-9050-4FFE2F85C17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56B9B15-F6ED-4459-9050-4FFE2F85C17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56B9B15-F6ED-4459-9050-4FFE2F85C17C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A375720-F8D6-4C2B-ABF1-5F75B3A88C50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A375720-F8D6-4C2B-ABF1-5F75B3A88C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A375720-F8D6-4C2B-ABF1-5F75B3A88C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A375720-F8D6-4C2B-ABF1-5F75B3A88C50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84EEDA1B-B0E1-491F-BDE1-2CEF31752D72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84EEDA1B-B0E1-491F-BDE1-2CEF31752D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84EEDA1B-B0E1-491F-BDE1-2CEF31752D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84EEDA1B-B0E1-491F-BDE1-2CEF31752D72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA98CA17-267E-48FE-879F-0A3483A26B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA98CA17-267E-48FE-879F-0A3483A26B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA98CA17-267E-48FE-879F-0A3483A26B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA98CA17-267E-48FE-879F-0A3483A26B13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FED2510C-C237-46A1-ADF9-CF815CC21C43} = {96CDCC82-6C7C-4C34-BCBF-DAB00516E811}
+		{71843099-CA58-4043-BEE2-1B77BC1CA7CC} = {96CDCC82-6C7C-4C34-BCBF-DAB00516E811}
+		{B56B9B15-F6ED-4459-9050-4FFE2F85C17C} = {96CDCC82-6C7C-4C34-BCBF-DAB00516E811}
+		{4A375720-F8D6-4C2B-ABF1-5F75B3A88C50} = {96CDCC82-6C7C-4C34-BCBF-DAB00516E811}
+		{84EEDA1B-B0E1-491F-BDE1-2CEF31752D72} = {95A59137-4F3E-48AF-86C2-5DB5BD21F6FB}
+		{AA98CA17-267E-48FE-879F-0A3483A26B13} = {95A59137-4F3E-48AF-86C2-5DB5BD21F6FB}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,103 @@
+<div class="live-call-container">
+  <!-- Header -->
+  <header class="call-header">
+    <h1>SA Real-Time - Asistente en Vivo</h1>
+    <div *ngIf="!isCallActive" class="start-call-form">
+      <input type="text" [(ngModel)]="agentId" placeholder="ID del Agente" />
+      <select [(ngModel)]="callType">
+        <option value="Outbound">Outbound</option>
+        <option value="Inbound">Inbound</option>
+      </select>
+      <button (click)="startCall()" [disabled]="!agentId">Iniciar Llamada</button>
+    </div>
+    <div *ngIf="isCallActive" class="call-active-info">
+      <span class="status-badge active">EN VIVO</span>
+      <span>Sesión: {{ sessionId }}</span>
+      <button class="btn-end" (click)="endCall()">Finalizar Llamada</button>
+    </div>
+  </header>
+
+  <div class="main-grid" *ngIf="isCallActive">
+    <!-- Left: Transcription -->
+    <section class="transcript-panel">
+      <h2>Transcripción</h2>
+      <div class="transcript-scroll">
+        <div *ngFor="let segment of transcriptSegments"
+             class="transcript-segment"
+             [class.employee]="segment.speaker === 'Empleado'"
+             [class.client]="segment.speaker === 'Cliente'">
+          <span class="speaker">{{ segment.speaker }}:</span>
+          <span class="text">{{ segment.text }}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right: Suggestions + Temperature + Checklist -->
+    <aside class="assistant-panel">
+      <!-- Suggestions -->
+      <section class="suggestions-section">
+        <h2>Sugerencias</h2>
+        <div *ngIf="suggestions.length === 0" class="empty-state">
+          Esperando transcripción para generar sugerencias...
+        </div>
+        <div *ngFor="let suggestion of suggestions" class="suggestion-card"
+             [class.high]="suggestion.priority === 'High'"
+             [class.critical]="suggestion.priority === 'Critical'">
+          <p>{{ suggestion.text }}</p>
+          <span class="category">{{ suggestion.category }}</span>
+        </div>
+      </section>
+
+      <!-- Temperature -->
+      <section class="temperature-section">
+        <h2>Temperatura</h2>
+        <div *ngIf="temperature" class="temperature-grid">
+          <div class="temp-item">
+            <span class="temp-label">Emocional</span>
+            <div class="temp-bar">
+              <div class="temp-fill" [style.width.%]="temperature.emotional"
+                   [style.background-color]="getTemperatureColor(temperature.emotional)"></div>
+            </div>
+            <span class="temp-value">{{ temperature.emotionalLabel }}</span>
+          </div>
+          <div class="temp-item">
+            <span class="temp-label">Venta</span>
+            <div class="temp-bar">
+              <div class="temp-fill" [style.width.%]="temperature.sales"
+                   [style.background-color]="getTemperatureColor(temperature.sales)"></div>
+            </div>
+            <span class="temp-value">{{ temperature.salesLabel }}</span>
+          </div>
+          <div class="temp-item">
+            <span class="temp-label">Conflicto</span>
+            <div class="temp-bar">
+              <div class="temp-fill" [style.width.%]="temperature.conflict"
+                   [style.background-color]="getConflictColor(temperature.conflict)"></div>
+            </div>
+            <span class="temp-value">{{ temperature.conflictLabel }}</span>
+          </div>
+          <div *ngIf="temperature.requiresAttention" class="attention-alert">
+            REQUIERE ATENCION - Conflicto elevado
+          </div>
+        </div>
+        <div *ngIf="!temperature" class="empty-state">Sin datos de temperatura</div>
+      </section>
+
+      <!-- Checklist -->
+      <section class="checklist-section">
+        <h2>Protocolo BBVA</h2>
+        <div *ngIf="currentPhase" class="current-phase">
+          Fase actual: <strong>{{ currentPhase }}</strong>
+        </div>
+        <ul class="checklist">
+          <li *ngFor="let step of protocolSteps"
+              [class.completed]="isStepCompleted(step.id)"
+              [class.current]="currentPhase === step.id">
+            <span class="check-icon">{{ isStepCompleted(step.id) ? '&#10003;' : '&#9675;' }}</span>
+            {{ step.label }}
+          </li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</div>
